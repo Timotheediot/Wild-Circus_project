@@ -27,7 +27,7 @@ app.use(urlencodedParser);
 app.use(bodyParser.json());
 
 //---------Définition des CORS---------
-app.use(function (req, res, next) {
+app.use( (req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -45,18 +45,18 @@ app.listen(port, (err) => {
 });
 
 
-// écoute de l'url "/api/employees"
+// écoute de l'url "/article"
 
-app.get('/api/employees', (req, res) => {
+app.get('/article', (req, res) => {
 
-    // connection à la base de données, et sélection des employés
-    connection.query('SELECT * from employee', (err, results) => {
+    // connection à la base de données, et sélection des articles
+    connection.query('SELECT * from article', (err, results) => {
   
       if (err) {
         console.log(err);
         
         // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
-        res.status(500).send('Erreur lors de la récupération des employés');
+        res.status(500).send('Erreur lors de la récupération des articles');
       } else {
   
         // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
