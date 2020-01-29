@@ -1,0 +1,12 @@
+nav {
+    min-height: 10vh;
+    font-size: 1.3em;
+  }
+
+  .navBar{
+    background-color: #ffffff;
+  }
+
+  .NavLinks{
+    color: #262626;
+  }
