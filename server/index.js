@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-
 const bodyParser = require('body-parser');
-
 const port = 8000;
-
 const connection = require('./config/config');
+
+app.use(require('./routes'));
+
 
 connection.connect((err) => {
     if (err) {
@@ -45,22 +45,3 @@ app.listen(port, (err) => {
 });
 
 
-// écoute de l'url "/article"
-
-app.get('/article', (req, res) => {
-
-    // connection à la base de données, et sélection des articles
-    connection.query('SELECT * from article', (err, results) => {
-  
-      if (err) {
-        console.log(err);
-        
-        // Si une erreur est survenue, alors on informe l'utilisateur de l'erreur
-        res.status(500).send('Erreur lors de la récupération des articles');
-      } else {
-  
-        // Si tout s'est bien passé, on envoie le résultat de la requête SQL en tant que JSON.
-        res.json(results);
-      }
-    });
-});
