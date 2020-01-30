@@ -3,6 +3,7 @@ const router = express.Router();
 const article = require('./article/Article');
 const categorie = require('./categorie/Categorie')
 
+
 router.use('/article', article )
 router.use('/categorie', categorie)
 

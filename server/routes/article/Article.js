@@ -5,10 +5,10 @@ const connection = require('../../config/config');
 
 // écoute de l'url "/article/…"
 
-router.get('/', (req, res) => {
+router.get('/photobyarticle/:id', (req, res) => {
 
-    connection.query('SELECT * from article', (err, results) => {
-  
+    connection.query(`SELECT id_photo, name, url, art.article_name, art.date, art.description FROM photo JOIN article as art ON art.id_categorie=article_id WHERE art.id=${req.params.id}`, (err, results) => {
+   
       if (err) {
         console.log(err);
         res.status(500).send('Erreur lors de la récupération des articles');
