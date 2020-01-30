@@ -5,7 +5,7 @@ import './Contact.css'
 const Contact = () => {
   return (
     <div className='container-fluid'>
-      <img className='PhotoContact' src={PhotoContact} />
+      <img className='PhotoContact' src={PhotoContact} alt="circus man" />
       <form className='container mt-5'>
         <div class="form-group container">
           <label for="exampleFormControlInput1">Email address</label>

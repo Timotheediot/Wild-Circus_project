@@ -1,16 +1,31 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './News.css'
+import NewsCard from './NewsCard';
 
 const News = () => {
+
+  const [articles, setArticles] = useState([])
+
+  useEffect(() => {
+    axios.get('http:/localhost:8000/photobyarticle')
+    .then(res=> {
+      console.log(res);
+      setArticles(res.data)
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }, [])
+
   return (
-    <div>
-      <div class="card border-dark mb-3 cardContainer" >
-  <div class="card-header">Header</div>
-  <div class="card-body text-dark">
-    <h5 class="card-title">Dark card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+    <div className='container mx-auto'>
+      <div className='row'>
+        {articles && articles.map((article) => {
+          return( <NewsCard article={article} />)
+        }
+        )}
+      </div>
     </div>
   );
 }
