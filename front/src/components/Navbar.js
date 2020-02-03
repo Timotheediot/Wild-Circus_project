@@ -2,13 +2,16 @@ import React from "react";
 import './Navbar.css'
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
 
 
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light navBar">
-                <a className="navbar-brand text-dark">Wild Circus.</a>
+                <Link className="navbar-brand text-dark" to="/">
+                        <li className='titlelinkWildCircus'>Wild Circus.</li>
+                </Link>
                 <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon white"></span>
                 </button>

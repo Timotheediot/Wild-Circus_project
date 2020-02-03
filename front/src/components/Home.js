@@ -3,7 +3,6 @@ import Photo1 from '../assets/img/circus1.jpg'
 import Photo2 from '../assets/img/circus2.jpg'
 import Photo3 from '../assets/img/circus3.jpg'
 import './Home.css'
-import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
