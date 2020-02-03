@@ -7,6 +7,9 @@ const News = () => {
 
 const [articles, setArticles] = useState([])
 const [articlesByCategorie, setArticlesByCategorie] = useState([])
+const [categories, setCategories] = useState([])
+
+
 const getArticles = async () => {
   const result = await
     axios.get('http://localhost:8000/article')
@@ -14,12 +17,6 @@ const getArticles = async () => {
         setArticlesByCategorie(result.data)
 }  
 
-useEffect(() => {
-  getArticles()
-},[])
-
-
-  
   const articlebyCat = (e) => {
     if(e.target.value === "Tous") {
       return setArticlesByCategorie(articles)
@@ -28,7 +25,6 @@ useEffect(() => {
     setArticlesByCategorie(articlesByCat)
   }
 
-  const [categories, setCategories] = useState([])
   useEffect(() => {
     axios.get('http://localhost:8000/article/categorie')
       .then(res => {
@@ -40,9 +36,12 @@ useEffect(() => {
       })
   }, []);
 
+  useEffect(() => {
+    getArticles()
+  },[])
 
   return (
-    <div className='container mx-auto'>
+    <div className='container-fluid'>
         <label className='text-secondary mt-3'>Sélectionnez une catégorie</label>
 
       <select className="browser-default custom-select mb-5 " onChange={(e)=>articlebyCat(e)} >
