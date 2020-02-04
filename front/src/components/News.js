@@ -41,7 +41,7 @@ const getArticles = async () => {
   },[])
 
   return (
-    <div className='container-fluid'>
+    <div className='container'>
         <label className='text-secondary mt-3'>Sélectionnez une catégorie</label>
 
       <select className="browser-default custom-select mb-5 " onChange={(e)=>articlebyCat(e)} >
@@ -50,7 +50,7 @@ const getArticles = async () => {
         })}
       </select>
 
-      <div className='row'>
+      <div className='row mx-auto'>
         {articlesByCategorie && articlesByCategorie.map((article) => {
           return (<NewsCard article={article} />)
         }

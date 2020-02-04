@@ -2,6 +2,10 @@
     width: 16rem;
 }
 
+.containerTextCard {
+    height: 100px;
+}
+
 .imgCard{
     height: 200px;
     width: auto;
