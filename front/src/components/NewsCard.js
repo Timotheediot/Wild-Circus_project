@@ -11,7 +11,7 @@ const NewsCard = ({ article }) => {
         <div className="card-body">
           <h6 className="card-title">{article.article_name}</h6>
           <p className="card-text containerTextCard text-left">{article.description.substring(0, 82)}…</p>
-          <a href="..." className="btn btn-dark align-self-end btn btn-block ">Lire la suite</a>
+          <a href="..." className="btn BoutonLireLaSuite align-self-end btn btn-block ">Lire la suite</a>
         </div>
       </div>
     </div>
