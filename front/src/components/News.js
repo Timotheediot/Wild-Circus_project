@@ -42,7 +42,7 @@ const getArticles = async () => {
 
   return (
     <div className='pageNews'>
-    <div className='container'>
+    <div className='container mx-auto'>
         <label className='text-white mt-3'>Sélectionnez une catégorie</label>
 
       <select className="browser-default custom-select mb-5 " onChange={(e)=>articlebyCat(e)} >
