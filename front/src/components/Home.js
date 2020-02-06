@@ -40,7 +40,7 @@ const Home = () => {
                             <div className="bg-black text-center h-100 project">
                                 <div className="d-flex h-100">
                                     <div className="project-text w-100 my-auto text-center text-lg-left">
-                                        <h4 className="ml-4 text-black">Animals</h4>
+                                        <h4 className="ml-4 text-black">Animaux</h4>
                                         <p className=" ml-4 mb-0 text-black-50 text-justify">En dehors des spectacles, les éléphants bénéficient d’un parc arboré en banlieue parisienne. Le Wild Circus a pris soin d’offrir à̀ ses éléphants un grand parc de repos, offrant tout le confort nécéssaire à leur bien-être.</p>
                                         <hr className="d-none d-lg-block mb-0 ml-0" />
                                     </div>
